@@ -25,12 +25,13 @@ let users = [
 
 
 // 2. Define a type for representing the days of week. Valid values are “Monday”, “Tuesday”, etc.
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+// Literal Types (exact)
+// let quantity: (25 | 50 | 75 | 100) = 50
 
-let today = days[0]
-console.log(`Today is ${today}`)
+type weekDays = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday";
 
-
+let today: weekDays = "Monday";
+console.log(today);
 
 
 
@@ -51,10 +52,21 @@ console.log(person.getFullName())
 
 
 
-
 // 4. Create a new class called "Employee" that extends "Person" and adds a new property called salary. 
+interface newEmployee {
+    first_name: string;
+    last_name: string;
+    salary?: number;
+}
 
-
+class newEmployee implements Person {
+    constructor(
+        public firstName:string, 
+        public lastName:string
+) {}
+    getFullName = (): string =>
+        `${this.firstName} ${this.lastName}`
+}
 
 
 // 5. Given the data below, define an interface for representing employees:
@@ -62,18 +74,17 @@ console.log(person.getFullName())
 // 1 interface will be for the address
 // 1 interface will be for the employee
 
-interface address {
-    street:string,
-    city:string,
-    zipCode:number
-}
-
 interface employee {
     name:string,
     salary:number,
     address:address
 }
 
+interface address {
+    street:string,
+    city:string,
+    zipCode:number
+}
 let employee = {
     name:'Christian Askew',
     salary:1_000_000,
