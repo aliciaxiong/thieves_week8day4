@@ -21,7 +21,16 @@ let users = [
     }
 ];
 
+
+
+
 // 2. Define a type for representing the days of week. Valid values are “Monday”, “Tuesday”, etc.
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+let today = days[0]
+console.log(`Today is ${today}`)
+
+
 
 
 
@@ -40,7 +49,11 @@ class Person {
 const person = new Person('Alicia', 'Xiong')
 console.log(person.getFullName())
 
+
+
+
 // 4. Create a new class called "Employee" that extends "Person" and adds a new property called salary. 
+
 
 
 
